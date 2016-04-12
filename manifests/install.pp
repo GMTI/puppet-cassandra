@@ -33,20 +33,20 @@ class cassandra::install {
 
   if $::osfamily == 'Debian' {
     package {'cassandra':
-      ensure  => '2.0.10',
+      ensure  => '2.0.17',
       require => [Class['java'], Exec['update-cassandra-repos']],
       before  => Package['dsc20']
     }
   }
 
   package {'dsc20':
-    ensure  => '2.0.10-1',
+    ensure  => '2.0.17-1',
     require => [Class['java'], Exec['update-cassandra-repos']]
   }
 
   file {'/usr/share/cassandra/apache-cassandra.jar':
     ensure  => link,
-    target  => '/usr/share/cassandra/apache-cassandra-2.0.10.jar',
+    target  => '/usr/share/cassandra/apache-cassandra-2.0.17.jar',
     owner   => 'cassandra',
     group   => 'cassandra',
     require => Package['dsc20']
