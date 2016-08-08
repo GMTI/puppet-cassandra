@@ -35,7 +35,7 @@ class cassandra::repository {
         apt::source {'datastax':
           location    => 'http://debian.datastax.com/community 2.2',
           comment     => 'DataStax Repo for Apache Cassandra',
-          release     => 'main',
+          release     => 'stable',
           key         => '7E41C00F85BFC1706C4FFFB3350200F2B999A372',
           key_source  => 'http://debian.datastax.com/debian/repo_key',
           include_src => false
