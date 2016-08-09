@@ -33,7 +33,7 @@ class cassandra::install {
 
   if $::osfamily == 'Debian' {
     package {'cassandra':
-      ensure  => '2.2.7-1',
+      ensure  => '2.2.7',
       require => [Class['java'], Exec['update-cassandra-repos']],
       before  => Package['dsc22']
     }
