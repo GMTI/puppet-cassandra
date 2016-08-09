@@ -35,7 +35,7 @@ class cassandra::install {
     package {'cassandra':
       ensure  => '2.2.7-1',
       require => [Class['java'], Exec['update-cassandra-repos']],
-      before  => Package['dsc20']
+      before  => Package['dsc22']
     }
   }
 
